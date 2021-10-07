@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class MessageStorage {
     private static volatile MessageStorage instance;
 
-    private ConcurrentLinkedQueue<Message> messages;
+    public ConcurrentLinkedQueue<Message> messages;
 
     public MessageStorage() {
         messages = new ConcurrentLinkedQueue<Message>();
@@ -16,7 +16,7 @@ public class MessageStorage {
     }
 
     public Message getMessage() {
-        return messages.poll();
+        return messages.peek();
     }
 
     public boolean isEmpty() {

@@ -18,7 +18,7 @@ public class UserStorage {
 
     public User getUser()
     {
-        return users.element();
+        return users.peek();
     }
 
     public boolean isEmpty()

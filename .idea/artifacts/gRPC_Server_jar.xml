@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="gRPC-Server:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/gRPC_Server_jar</output-path>
+    <output-path>$PROJECT_DIR$/../../../../projectsbin</output-path>
     <root id="archive" name="gRPC-Server.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/META-INF/MANIFEST.MF" />

@@ -24,12 +24,12 @@ public class ReceiveMessageSerivice extends messageReceiverGrpc.messageReceiverI
     @Override
     public void receive(Service.receivedMessage request, StreamObserver<Service.newResponse> responseObserver)
     {
-        messageStorage.addMessage(new Message(request.getName(), request.getBody()));
+        messageStorage.addMessage(new Message(request.getName(), request.getBody(),request.getTopic()));
         Service.newResponse.Builder responseBuilder = Service.newResponse.newBuilder();
         Service.newResponse response = responseBuilder.setIsSucces("Succces").build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
-        sendMessageService.broadcastMessage(messageStorage.getMessage());
+        sendMessageService.broadcastMessage(new Message(request.getName(), request.getBody() , request.getTopic()));
     }
 
 

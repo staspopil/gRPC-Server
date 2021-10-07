@@ -5,10 +5,12 @@ import io.grpc.ManagedChannelBuilder;
 
 public class User {
     public String address;
-    public User(String adr)
+    public String topic;
+    public User(String adr, String topic)
     {
         this.address = adr;
         ManagedChannel channel = ManagedChannelBuilder.forTarget(adr)
                 .usePlaintext().build();
+        this.topic = topic;
     }
 }

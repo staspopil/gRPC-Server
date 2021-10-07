@@ -3,11 +3,12 @@ package Storages;
 public class Message {
     String sourcename;
     String messagebody;
-
-    public Message(String name, String message)
+    String topic;
+    public Message(String name, String message, String topic)
     {
         this.messagebody = message;
         this.sourcename = name;
+        this.topic = topic;
     }
 
     public void setMessagebody(String messagebody) {
@@ -25,4 +26,7 @@ public class Message {
     public String getSourcename() {
         return sourcename;
     }
+
+    public String getTopic() { return topic;}
 }
+
